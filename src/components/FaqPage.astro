@@ -1,0 +1,35 @@
+---
+import BaseLayout from './BaseLayout.astro';
+import Nav from './Nav.astro';
+import Footer from './Footer.astro';
+import FAQ from './FAQ.astro';
+import { getTranslations, t } from '../i18n/translations';
+import type { Locale } from '../i18n/config';
+
+interface Props {
+  locale: string;
+}
+
+const { locale } = Astro.props;
+const tr = getTranslations(locale as Locale);
+const currentPath = '/faq';
+---
+<BaseLayout
+  title={`${t(tr, 'faq.sectionTitle')} — Weather Assistant`}
+  description={t(tr, 'faq.sectionTitle')}
+  locale={locale}
+  currentPath={currentPath}
+>
+  <div data-embed-hide><Nav locale={locale} currentPath={currentPath} /></div>
+
+  <main id="main" tabindex="-1">
+    <article class="bg-bg-surface px-4 pb-4 pt-12 sm:px-6 lg:px-8">
+      <div class="mx-auto max-w-3xl text-center">
+        <h1 class="text-3xl font-bold text-text-primary sm:text-4xl">{t(tr, 'faq.sectionTitle')}</h1>
+      </div>
+    </article>
+    <FAQ locale={locale} />
+  </main>
+
+  <div data-embed-hide><Footer locale={locale} currentPath={currentPath} /></div>
+</BaseLayout>
