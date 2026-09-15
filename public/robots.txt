@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://srcchang.github.io/weather-assistant/sitemap-index.xml

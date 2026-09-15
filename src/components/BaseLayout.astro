@@ -1,0 +1,91 @@
+---
+import '../styles/global.css';
+import { locales, defaultLocale, htmlLang, ogLocale } from '../i18n/config';
+import type { Locale } from '../i18n/config';
+import { getTranslations, t } from '../i18n/translations';
+
+interface Props {
+  title: string;
+  description: string;
+  locale: string;
+  currentPath: string;
+  jsonLd?: Record<string, any>;
+}
+
+const { title, description, locale, currentPath, jsonLd } = Astro.props;
+const base = import.meta.env.BASE_URL;
+const canonicalBase = `${Astro.site?.href.replace(/\/$/, '')}${base}`;
+const pathSuffix = currentPath === '/' ? '' : currentPath;
+const canonicalUrl = `${canonicalBase}/${locale}${pathSuffix}`;
+const pageLang = htmlLang[locale as Locale] ?? locale;
+
+function tSkip(loc: string): string {
+  return t(getTranslations(loc as Locale), 'common.a11y.skipToContent');
+}
+---
+
+<!DOCTYPE html>
+<html lang={pageLang} class="scroll-smooth">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <script is:inline>
+      (function () {
+        document.documentElement.classList.add('js');
+        var params = new URLSearchParams(location.search);
+        var themeParam = params.get('theme');
+        var dark;
+        if (themeParam === 'dark' || themeParam === 'light') {
+          dark = themeParam === 'dark';
+        } else {
+          var stored = localStorage.getItem('theme');
+          dark = stored === 'dark' || (!stored && window.matchMedia('(prefers-color-scheme: dark)').matches);
+        }
+        document.documentElement.setAttribute('data-theme', dark ? 'dark' : 'light');
+        var embedParam = params.get('embed');
+        if (embedParam === '1' || embedParam === 'true') {
+          document.documentElement.setAttribute('data-embed', 'true');
+        }
+      })();
+    </script>
+
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonicalUrl} />
+
+    {locales.map((loc) => (
+      <link rel="alternate" hreflang={loc} href={`${canonicalBase}/${loc}${pathSuffix}`} />
+    ))}
+    <link rel="alternate" hreflang="x-default" href={`${canonicalBase}/${defaultLocale}${pathSuffix}`} />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonicalUrl} />
+    <meta property="og:locale" content={ogLocale[locale as Locale] ?? locale} />
+    <meta property="og:image" content={`${canonicalBase}/og-default.png`} />
+    <meta property="og:image:type" content="image/png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+
+    <meta name="apple-itunes-app" content="app-id=6450742824" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="theme-color" media="(prefers-color-scheme: light)" content="#FBFCFE" />
+    <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#191C1E" />
+
+    <link rel="icon" type="image/png" href={`${import.meta.env.BASE_URL}/favicon.png`} />
+    <link rel="apple-touch-icon" href={`${import.meta.env.BASE_URL}/apple-touch-icon.png`} />
+
+    {jsonLd && (
+      <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
+    )}
+  </head>
+  <body class="bg-bg-primary text-text-primary font-sans">
+    <a href="#main" class="skip-link">{tSkip(locale)}</a>
+    <slot />
+    <script>
+      import '../scripts/scroll-reveal';
+    </script>
+  </body>
+</html>

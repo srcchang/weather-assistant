@@ -1,0 +1,96 @@
+---
+import { locales, localeLabels } from '../i18n/config';
+import type { Locale } from '../i18n/config';
+import { getTranslations, t } from '../i18n/translations';
+
+interface Props {
+  locale: string;
+  currentPath?: string;
+}
+
+const { locale, currentPath = '' } = Astro.props;
+const tr = getTranslations(locale as Locale);
+const currentLabel = localeLabels[locale as Locale] ?? locale;
+const base = import.meta.env.BASE_URL;
+---
+
+<details class="relative" data-language-switcher>
+  <summary
+    class="flex cursor-pointer list-none items-center gap-1 rounded-lg px-3 py-3 text-sm font-medium text-text-secondary transition-colors hover:bg-bg-muted hover:text-text-primary select-none"
+    aria-label={t(tr, 'common.a11y.languageSelect')}
+  >
+    <span>{currentLabel}</span>
+    <svg
+      class="h-3 w-3 transition-transform duration-200"
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 12 12"
+      fill="none"
+      stroke="currentColor"
+      stroke-width="2"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+      aria-hidden="true"
+    >
+      <path d="M2 4l4 4 4-4" />
+    </svg>
+  </summary>
+
+  <div
+    class="absolute right-0 top-full z-50 mt-1 min-w-[140px] overflow-hidden rounded-xl border border-border-subtle bg-bg-surface py-1 shadow-lg"
+  >
+    {locales.map((loc) => (
+      <a
+        href={`${base}/${loc}${currentPath}`}
+        class:list={[
+          'block px-4 py-2.5 text-sm transition-colors hover:bg-bg-muted',
+          loc === locale
+            ? 'font-semibold text-text-primary'
+            : 'text-text-secondary hover:text-text-primary',
+        ]}
+      >
+        {localeLabels[loc]}
+      </a>
+    ))}
+  </div>
+</details>
+
+<style>
+  details[open] > summary svg {
+    transform: rotate(180deg);
+  }
+  details > summary {
+    list-style: none;
+  }
+  details > summary::-webkit-details-marker {
+    display: none;
+  }
+</style>
+
+<script>
+  function initSwitchers(): void {
+    const closeAll = (except?: Element) => {
+      document
+        .querySelectorAll<HTMLDetailsElement>('[data-language-switcher][open]')
+        .forEach((d) => {
+          if (d !== except) d.removeAttribute('open');
+        });
+    };
+
+    document.addEventListener('click', (e) => {
+      const target = e.target;
+      const inside =
+        target instanceof Element && !!target.closest('[data-language-switcher]');
+      closeAll(inside ? (target as Element).closest('[data-language-switcher]')! : undefined);
+    });
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') closeAll();
+    });
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initSwitchers);
+  } else {
+    initSwitchers();
+  }
+</script>

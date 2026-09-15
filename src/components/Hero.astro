@@ -1,0 +1,68 @@
+---
+import { getTranslations, t } from '../i18n/translations';
+import type { Locale } from '../i18n/config';
+import DownloadCTA from './DownloadCTA.astro';
+
+interface Props {
+  locale: string;
+}
+
+const { locale } = Astro.props;
+const tr = getTranslations(locale as Locale);
+const base = import.meta.env.BASE_URL;
+---
+
+<section
+  id="hero"
+  class="relative flex min-h-[calc(100vh-4rem)] min-h-[calc(100dvh-4rem)] flex-col items-center justify-center overflow-hidden px-4 py-16 sm:px-6 lg:px-8"
+>
+  <!-- Brand gradient glow (App brandGradient light #005F7A→#0090B3) -->
+  <div class="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/4 h-[600px] w-[600px] rounded-full bg-primary/10 blur-3xl"></div>
+
+  <div class="relative z-10 flex flex-col items-center text-center">
+    <div class="mb-6 inline-flex items-center rounded-full border border-border-subtle bg-bg-surface px-4 py-1.5 text-sm font-medium text-text-secondary shadow-sm">
+      {t(tr, 'hero.badge')}
+    </div>
+
+    <h1 class="font-display text-[clamp(2.5rem,8vw,5rem)] font-bold leading-tight tracking-tight text-text-primary">
+      {t(tr, 'hero.title1')}
+      <span class="block bg-gradient-to-r from-primary-deep to-primary-bright bg-clip-text text-transparent">
+        {t(tr, 'hero.title2')}
+      </span>
+    </h1>
+
+    <p class="mt-6 max-w-md text-[clamp(0.9rem,2.5vw,1.125rem)] text-text-secondary">
+      {t(tr, 'hero.subtitle')}
+    </p>
+
+    <div class="mt-12 flex items-end justify-center gap-6 sm:gap-10">
+      <div class="phone-float">
+        <img
+          src={`${base}/screenshots/hero-${locale}.png`}
+          alt={t(tr, 'hero.screenshotAlt')}
+          class="w-[220px] rounded-[2rem] border-2 border-border-subtle shadow-2xl sm:w-[260px]"
+          width="520"
+          height="1120"
+          loading="eager"
+        />
+      </div>
+    </div>
+
+    <div class="mt-10">
+      <DownloadCTA locale={locale} />
+    </div>
+  </div>
+</section>
+
+<style>
+  .font-display {
+    font-family: var(--font-family-display);
+  }
+  @keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50%       { transform: translateY(-10px); }
+  }
+  .phone-float {
+    animation: float 4s ease-in-out infinite;
+  }
+</style>

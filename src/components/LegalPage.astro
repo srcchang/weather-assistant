@@ -1,0 +1,49 @@
+---
+import BaseLayout from './BaseLayout.astro';
+import Nav from './Nav.astro';
+import Footer from './Footer.astro';
+import { getTranslations, t } from '../i18n/translations';
+import type { Locale } from '../i18n/config';
+
+interface Props {
+  type: 'privacy';
+  locale: string;
+}
+
+const { type, locale } = Astro.props;
+const tr = getTranslations(locale as Locale);
+
+const title = t(tr, `legal.${type}.title`);
+const lastUpdated = t(tr, `legal.${type}.lastUpdated`);
+const translations = tr as Record<string, any>;
+const sections: { heading: string; content: string }[] = translations.legal?.[type]?.sections ?? [];
+const currentPath = `/${type}`;
+---
+<BaseLayout
+  title={`${title} — Weather Assistant`}
+  description={title}
+  locale={locale}
+  currentPath={currentPath}
+>
+  <div data-embed-hide><Nav locale={locale} currentPath={currentPath} /></div>
+
+  <main id="main" tabindex="-1">
+    <article class="bg-bg-surface px-4 pb-16 pt-12 sm:px-6 lg:px-8">
+      <div class="mx-auto max-w-2xl">
+        <h1 class="text-3xl font-bold text-text-primary sm:text-4xl">{title}</h1>
+        <p class="mt-2 text-sm text-text-secondary">{lastUpdated}</p>
+
+        <div class="mt-10 space-y-8">
+          {sections.map((section) => (
+            <section>
+              <h2 class="text-lg font-semibold text-text-primary">{section.heading}</h2>
+              <p class="mt-2 leading-relaxed text-text-secondary">{section.content}</p>
+            </section>
+          ))}
+        </div>
+      </div>
+    </article>
+  </main>
+
+  <div data-embed-hide><Footer locale={locale} currentPath={currentPath} /></div>
+</BaseLayout>

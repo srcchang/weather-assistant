@@ -1,0 +1,170 @@
+{
+  "nav": {
+    "features": "功能",
+    "sources": "資料來源",
+    "faq": "常見問題"
+  },
+  "hero": {
+    "badge": "台灣天氣助手",
+    "title1": "明天穿什麼",
+    "title2": "睡前看一眼就知道",
+    "subtitle": "明日穿衣建議、昨日對比、每晚 21:00 提醒。通勤族的日常穿衣工具。",
+    "download": "立即下載",
+    "screenshotAlt": "天氣助手 App 明日穿衣建議截圖"
+  },
+  "trust": {
+    "languages": "支援語系",
+    "languagesCount": "5",
+    "areas": "涵蓋鄉鎮",
+    "areasCount": "368",
+    "platforms": "雙平台",
+    "platformsLabel": "iOS + Android"
+  },
+  "features": {
+    "sectionTitle": "天氣助手的特色",
+    "sectionSubtitle": "為台灣通勤族打造的日常工具",
+    "items": [
+      {
+        "icon": "shirt",
+        "title": "明日穿衣建議",
+        "description": "根據明日氣溫與今日對比，給你 5 條保守實用的穿衣規則：變冷提醒加外套、高溫提醒、溫差大洋蔥式穿搭，文案可愛但判斷保守。"
+      },
+      {
+        "icon": "bell",
+        "title": "每晚 21:00 本地通知",
+        "description": "睡前一則提醒，告訴你明天怎麼穿。純本地排程、零後端，飛行模式用快取也照推，點通知回到對應地點。"
+      },
+      {
+        "icon": "thermometer",
+        "title": "完整預報一次看懂",
+        "description": "逐時溫度、每日預報、濕度、風速風向、紫外線 UVI、熱危害 WBGT、日出日落，全都整理在同一頁。"
+      },
+      {
+        "icon": "wind",
+        "title": "空氣品質＋地震小版",
+        "description": "AQI 空氣品質、氣象小幫手原文，加上顯著地震 Home 橫幅與有感地震列表，通勤也兼顧災防。"
+      },
+      {
+        "icon": "map-pin",
+        "title": "多地點＋地圖選點",
+        "description": "收藏多個地點左右滑動切換，文字搜尋或地圖點選找地點，座標自動反查鄉鎮，定位權限三態處理。"
+      },
+      {
+        "icon": "palette",
+        "title": "主題・字級・五語系",
+        "description": "深淺主題、字體縮放、五種語言，圓潤可愛但有質感的介面，每天打開都順眼。"
+      }
+    ]
+  },
+  "sources": {
+    "sectionTitle": "資料來源",
+    "sectionSubtitle": "公開資料與可信服務，透明標示",
+    "items": [
+      {
+        "name": "中央氣象署（CWA）",
+        "description": "三日／一週鄉鎮預報、WBGT、日出日落、氣象小幫手、AQI 皆來自 CWA 開放資料。"
+      },
+      {
+        "name": "OpenStreetMap",
+        "description": "位置搜尋自動完成使用 OSM Nominatim，僅限台灣範圍。"
+      },
+      {
+        "name": "國土測繪中心（NLSC）",
+        "description": "座標反查鄉鎮使用 NLSC 圖資，超出範圍會主動提醒。"
+      },
+      {
+        "name": "Firebase（Google）",
+        "description": "匿名登入、數據分析與崩潰回報用於改善服務，不做個人識別追蹤。"
+      }
+    ]
+  },
+  "faq": {
+    "sectionTitle": "常見問題",
+    "items": [
+      {
+        "question": "App 是免費的嗎？",
+        "answer": "是的，完全免費！穿衣建議、預報、通知、地圖等所有功能均可免費使用，僅含 AdMob 廣告。"
+      },
+      {
+        "question": "支援哪些語言？",
+        "answer": "支援繁體中文、簡體中文、英語、日語、韓語共 5 種語言，可在設定中切換。"
+      },
+      {
+        "question": "需要網路連線嗎？",
+        "answer": "預報更新需要網路。通知使用 7 天本地快取，即使短暫離線也能照常提醒。"
+      },
+      {
+        "question": "每晚通知可以關掉或改時間嗎？",
+        "answer": "可以。在設定中開關每日穿衣通知、調整時間（預設 21:00），關閉後不會再排程。"
+      },
+      {
+        "question": "一定要開定位權限嗎？",
+        "answer": "不用。手動新增地點或地圖選點即可使用，定位只用來快速找到你現在的位置。"
+      },
+      {
+        "question": "預報資料準確嗎？",
+        "answer": "資料來自中央氣象署開放資料與官方氣象小幫手原文。歷史鄉鎮對比受測站覆蓋影響，僅供日常穿衣參考。"
+      }
+    ]
+  },
+  "brand": {
+    "title": "關於天氣助手",
+    "description": "我們希望每個通勤的早晨，你都不再為穿什麼煩惱。睡前看一眼穿衣建議，帶傘、加外套，一句話就搞定。",
+    "cta": "立即下載"
+  },
+  "footer": {
+    "tagline": "台灣天氣助手\n明天穿什麼，睡前看一眼",
+    "legal": "法律資訊",
+    "contact": "聯絡我們",
+    "privacy": "隱私權政策",
+    "email": "srcchang@gmail.com",
+    "copyright": "© 2026 Project SRC. All rights reserved."
+  },
+  "common": {
+    "appStore": "App Store",
+    "googlePlay": "Google Play",
+    "downloadApp": "下載 App",
+    "a11y": {
+      "home": "首頁",
+      "menuOpen": "開啟選單",
+      "languageSelect": "選擇語言",
+      "themeDark": "切換至深色模式",
+      "themeLight": "切換至淺色模式",
+      "skipToContent": "跳至主要內容",
+      "appStoreLink": "在 App Store 下載（另開視窗）",
+      "googlePlayLink": "在 Google Play 下載（另開視窗）"
+    }
+  },
+  "legal": {
+    "privacy": {
+      "title": "隱私權政策",
+      "lastUpdated": "最後更新：2026 年 9 月",
+      "sections": [
+        {
+          "heading": "蒐集的資訊",
+          "content": "本 App 提供天氣預報、穿衣建議、空氣品質與地震資訊。我們不蒐集任何可識別個人身分的資訊，不需註冊即可使用全部功能。"
+        },
+        {
+          "heading": "定位資訊",
+          "content": "定位僅用於快速找到你目前的位置以查詢天氣。位置不會上傳或儲存於伺服器，拒絕授權仍可手動新增地點正常使用。"
+        },
+        {
+          "heading": "廣告",
+          "content": "本 App 透過 Google AdMob 顯示廣告。AdMob 可能使用匿名識別碼及裝置資訊進行廣告個人化。"
+        },
+        {
+          "heading": "Firebase 服務",
+          "content": "本 App 使用 Firebase（Google LLC）服務。Firebase Analytics 以匿名方式蒐集使用數據以改善服務；Firebase Crashlytics 蒐集崩潰報告以提升穩定性；Firebase 匿名驗證僅用於區分裝置，不關聯個人身分。"
+        },
+        {
+          "heading": "外部服務",
+          "content": "本 App 使用中央氣象署開放資料、OpenStreetMap 位置搜尋、國土測繪中心圖資與 Google Maps 顯示地圖。外部服務的使用適用各服務的隱私權政策。"
+        },
+        {
+          "heading": "聯絡方式",
+          "content": "如有隱私權政策相關問題，請聯繫 srcchang@gmail.com。"
+        }
+      ]
+    }
+  }
+}

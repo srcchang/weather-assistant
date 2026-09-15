@@ -1,0 +1,37 @@
+---
+import { getTranslations, t } from '../i18n/translations';
+import type { Locale } from '../i18n/config';
+import DownloadCTA from './DownloadCTA.astro';
+
+interface Props {
+  locale: string;
+}
+
+const { locale } = Astro.props;
+const tr = getTranslations(locale as Locale);
+---
+
+<section
+  class="relative overflow-hidden bg-bg-muted px-4 py-20 sm:px-6 lg:px-8"
+  data-reveal
+>
+  <div class="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/4 h-[400px] w-[400px] rounded-full bg-primary/5 blur-3xl"></div>
+
+  <div class="relative z-10 mx-auto max-w-2xl text-center">
+    <h2 class="text-2xl font-bold text-text-primary sm:text-3xl">
+      {t(tr, 'brand.title')}
+    </h2>
+
+    <p class="mx-auto mt-4 max-w-xl text-base leading-relaxed text-text-secondary">
+      {t(tr, 'brand.description')}
+    </p>
+
+    <p class="mt-10 bg-gradient-to-r from-primary-deep to-primary bg-clip-text text-3xl font-bold text-transparent sm:text-4xl">
+      {t(tr, 'brand.cta')}
+    </p>
+
+    <div class="mt-6">
+      <DownloadCTA locale={locale} />
+    </div>
+  </div>
+</section>

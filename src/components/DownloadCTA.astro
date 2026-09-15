@@ -1,0 +1,41 @@
+---
+import { getTranslations, t } from '../i18n/translations';
+import type { Locale } from '../i18n/config';
+
+interface Props {
+  locale: string;
+}
+
+const { locale } = Astro.props;
+const tr = getTranslations(locale as Locale);
+const base = import.meta.env.BASE_URL;
+
+const stores = [
+  {
+    href: 'https://apps.apple.com/app/id6450742824',
+    label: t(tr, 'common.a11y.appStoreLink'),
+    img: `${base}/images/app-store-badge.svg`,
+    alt: 'Download on the App Store',
+  },
+  {
+    href: 'https://play.google.com/store/apps/details?id=com.src.app.weatherassistant',
+    label: t(tr, 'common.a11y.googlePlayLink'),
+    img: `${base}/images/google-play-badge.png`,
+    alt: 'Get it on Google Play',
+  },
+];
+---
+
+<div class="flex flex-col items-center gap-3 sm:flex-row sm:justify-center">
+  {stores.map((store) => (
+    <a
+      href={store.href}
+      aria-label={store.label}
+      class="inline-flex h-12 w-40 items-center justify-center transition-transform hover:scale-[1.02] active:scale-95"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      <img src={store.img} alt={store.alt} class="max-h-full max-w-full" width="144" height="48" loading="lazy" />
+    </a>
+  ))}
+</div>

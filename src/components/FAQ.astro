@@ -1,0 +1,68 @@
+---
+import { getTranslations, t } from '../i18n/translations';
+import type { Locale } from '../i18n/config';
+
+interface Props {
+  locale: string;
+}
+
+const { locale } = Astro.props;
+const tr = getTranslations(locale as Locale);
+
+const faqItems = (tr as Record<string, any>).faq?.items ?? [];
+---
+
+<section id="faq" class="px-4 py-16 sm:px-6 lg:px-8" data-reveal>
+  <div class="mx-auto max-w-3xl">
+    <h2 class="mb-10 text-center text-2xl font-bold text-text-primary sm:text-3xl">
+      {t(tr, 'faq.sectionTitle')}
+    </h2>
+
+    <div class="space-y-3">
+      {faqItems.map((item: { question: string; answer: string }, i: number) => (
+        <div
+          data-faq-item
+          class="overflow-hidden rounded-xl border border-border-subtle bg-bg-surface"
+        >
+          <button
+            data-faq-trigger
+            aria-expanded="false"
+            aria-controls={`faq-content-${i}`}
+            class="flex w-full items-center justify-between gap-4 px-5 py-4 text-left font-semibold text-text-primary transition-colors hover:bg-bg-muted"
+          >
+            <span>{item.question}</span>
+            <svg
+              data-faq-chevron
+              class="h-5 w-5 shrink-0 text-text-secondary transition-transform duration-300"
+              viewBox="0 0 20 20"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              aria-hidden="true"
+            >
+              <path d="M5 7.5l5 5 5-5" />
+            </svg>
+          </button>
+
+          <div
+            id={`faq-content-${i}`}
+            data-faq-content
+            role="region"
+            class="overflow-hidden transition-[max-height,opacity] duration-300 ease-in-out"
+            style="max-height: 0; opacity: 0;"
+          >
+            <p class="px-5 pb-5 text-sm leading-relaxed text-text-secondary">
+              {item.answer}
+            </p>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<script>
+  import '../scripts/faq';
+</script>

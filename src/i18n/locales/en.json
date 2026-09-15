@@ -1,0 +1,170 @@
+{
+  "nav": {
+    "features": "Features",
+    "sources": "Data Sources",
+    "faq": "FAQ"
+  },
+  "hero": {
+    "badge": "Taiwan Weather Assistant",
+    "title1": "What to wear tomorrow?",
+    "title2": "Check before bed",
+    "subtitle": "Outfit advice for tomorrow, yesterday comparison, and a 9 PM nightly reminder. A daily companion for commuters.",
+    "download": "Download",
+    "screenshotAlt": "Weather Assistant outfit advice screenshot"
+  },
+  "trust": {
+    "languages": "Languages",
+    "languagesCount": "5",
+    "areas": "Townships covered",
+    "areasCount": "368",
+    "platforms": "Dual Platform",
+    "platformsLabel": "iOS + Android"
+  },
+  "features": {
+    "sectionTitle": "Why Weather Assistant?",
+    "sectionSubtitle": "Built for Taiwan commuters",
+    "items": [
+      {
+        "icon": "shirt",
+        "title": "Outfit advice for tomorrow",
+        "description": "Five conservative, practical rules based on tomorrow's forecast vs. today: jacket reminders when it cools down, heat alerts, layering tips for big day-night gaps."
+      },
+      {
+        "icon": "bell",
+        "title": "Nightly 9 PM local reminder",
+        "description": "One bedtime nudge telling you what to wear tomorrow. Fully local scheduling with zero backend — cached forecasts still notify in airplane mode, and tapping returns to the right location."
+      },
+      {
+        "icon": "thermometer",
+        "title": "Full forecast at a glance",
+        "description": "Hourly temperature, daily forecast, humidity, wind speed and direction, UV index, WBGT heat hazard, and sunrise/sunset — all on one page."
+      },
+      {
+        "icon": "wind",
+        "title": "Air quality + earthquake lite",
+        "description": "AQI, the official weather helper text, plus a home banner for significant earthquakes and a felt-earthquake list — disaster awareness for commuters."
+      },
+      {
+        "icon": "map-pin",
+        "title": "Multiple locations + map picking",
+        "description": "Save multiple locations and swipe between them, search by text or pick on the map, with automatic township lookup and graceful location-permission handling."
+      },
+      {
+        "icon": "palette",
+        "title": "Themes, scaling, 5 languages",
+        "description": "Light/dark themes, font scaling, and five languages in a cute yet refined interface you'll enjoy opening every day."
+      }
+    ]
+  },
+  "sources": {
+    "sectionTitle": "Data Sources",
+    "sectionSubtitle": "Open data and trusted services, clearly attributed",
+    "items": [
+      {
+        "name": "Central Weather Administration (CWA)",
+        "description": "3-day/weekly township forecasts, WBGT, sunrise/sunset, weather helper text, and AQI all come from CWA open data."
+      },
+      {
+        "name": "OpenStreetMap",
+        "description": "Place search autocomplete uses OSM Nominatim, limited to Taiwan."
+      },
+      {
+        "name": "NLSC Mapping Center",
+        "description": "Coordinate-to-township lookup uses NLSC map data, with a warning when out of range."
+      },
+      {
+        "name": "Firebase (Google)",
+        "description": "Anonymous sign-in, analytics, and crash reporting improve the service without personal tracking."
+      }
+    ]
+  },
+  "faq": {
+    "sectionTitle": "Frequently Asked Questions",
+    "items": [
+      {
+        "question": "Is the app free?",
+        "answer": "Yes, completely free! All features — outfit advice, forecasts, notifications, and maps — are free, with only AdMob ads."
+      },
+      {
+        "question": "Which languages are supported?",
+        "answer": "Five languages: Traditional Chinese, Simplified Chinese, English, Japanese, and Korean. Switch anytime in settings."
+      },
+      {
+        "question": "Do I need an internet connection?",
+        "answer": "An internet connection is needed to refresh forecasts. Notifications use a 7-day local cache, so brief offline periods are fine."
+      },
+      {
+        "question": "Can I turn off or reschedule the nightly notification?",
+        "answer": "Yes. Toggle the daily outfit notification or change its time (default 9 PM) in settings — no further scheduling once turned off."
+      },
+      {
+        "question": "Is location permission required?",
+        "answer": "No. Add places manually or pick them on the map; location is only a shortcut to find where you are now."
+      },
+      {
+        "question": "How accurate is the forecast data?",
+        "answer": "Data comes from CWA open data and the official weather helper text. Historical township comparison depends on station coverage — use it as a daily dressing reference."
+      }
+    ]
+  },
+  "brand": {
+    "title": "About Weather Assistant",
+    "description": "No more morning dilemma about what to wear. One glance at the outfit advice before bed — umbrella, jacket — sorted in a sentence.",
+    "cta": "Download Now"
+  },
+  "footer": {
+    "tagline": "Taiwan Weather Assistant\nWhat to wear tomorrow, check before bed",
+    "legal": "Legal",
+    "contact": "Contact",
+    "privacy": "Privacy Policy",
+    "email": "srcchang@gmail.com",
+    "copyright": "© 2026 Project SRC. All rights reserved."
+  },
+  "common": {
+    "appStore": "App Store",
+    "googlePlay": "Google Play",
+    "downloadApp": "Download the App",
+    "a11y": {
+      "home": "Home",
+      "menuOpen": "Open menu",
+      "languageSelect": "Select language",
+      "themeDark": "Switch to dark mode",
+      "themeLight": "Switch to light mode",
+      "skipToContent": "Skip to content",
+      "appStoreLink": "Download on the App Store (opens in new tab)",
+      "googlePlayLink": "Get it on Google Play (opens in new tab)"
+    }
+  },
+  "legal": {
+    "privacy": {
+      "title": "Privacy Policy",
+      "lastUpdated": "Last updated: September 2026",
+      "sections": [
+        {
+          "heading": "Information We Collect",
+          "content": "This app provides weather forecasts, outfit advice, air quality, and earthquake information. We do not collect any personally identifiable information, and all features work without registration."
+        },
+        {
+          "heading": "Location",
+          "content": "Location is only used to quickly find your current position for weather lookup. It is never uploaded to or stored on servers, and the app works fully with manually added places when permission is denied."
+        },
+        {
+          "heading": "Advertising",
+          "content": "This app displays advertisements through Google AdMob. AdMob may use anonymous identifiers and device information to personalize ads."
+        },
+        {
+          "heading": "Firebase Services",
+          "content": "This app uses Firebase (Google LLC) services. Firebase Analytics anonymously collects usage data for improvement; Firebase Crashlytics collects crash reports for stability; anonymous auth only distinguishes devices without linking to your identity."
+        },
+        {
+          "heading": "External Services",
+          "content": "This app uses CWA open data, OpenStreetMap place search, NLSC map data, and Google Maps. Each external service is governed by its own privacy policy."
+        },
+        {
+          "heading": "Contact",
+          "content": "For questions about this Privacy Policy, please contact srcchang@gmail.com."
+        }
+      ]
+    }
+  }
+}

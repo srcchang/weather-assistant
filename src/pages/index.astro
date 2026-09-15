@@ -1,0 +1,31 @@
+---
+const base = import.meta.env.BASE_URL;
+---
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <script is:inline define:vars={{ base }}>
+      (function () {
+        var detected = null;
+        var langs = navigator.languages || [navigator.language || ''];
+        for (var i = 0; i < langs.length && !detected; i++) {
+          var lang = (langs[i] || '').toLowerCase();
+          if (lang.indexOf('zh') === 0) {
+            detected =
+              /hant|tw|hk|mo/.test(lang) ? 'zh-Hant' : 'zh-Hans';
+          }
+          else if (lang.indexOf('ja') === 0) detected = 'ja';
+          else if (lang.indexOf('ko') === 0) detected = 'ko';
+          else if (lang.indexOf('en') === 0) detected = 'en';
+        }
+        // Fallback: Traditional Chinese when system locale matches none of the five options
+        location.replace(base + '/' + (detected || 'zh-Hant') + '/');
+      })();
+    </script>
+    <meta http-equiv="refresh" content={`0;url=${base}/zh-Hant/`} />
+    <link rel="canonical" href={`${base}/zh-Hant/`} />
+    <title>Weather Assistant</title>
+  </head>
+  <body></body>
+</html>

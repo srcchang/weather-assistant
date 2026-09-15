@@ -1,0 +1,30 @@
+{
+  "name": "weather-assistant",
+  "type": "module",
+  "version": "0.0.1",
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro"
+  },
+  "dependencies": {
+    "@astrojs/sitemap": "^3.7.1",
+    "@fontsource-variable/noto-sans-jp": "^5.2.8",
+    "@fontsource-variable/noto-sans-kr": "^5.2.8",
+    "@fontsource-variable/noto-sans-sc": "^5.2.8",
+    "@fontsource-variable/noto-sans-tc": "^5.2.8",
+    "@fontsource/zen-maru-gothic": "^5.2.5",
+    "@fontsource/outfit": "^5.2.8",
+    "@tailwindcss/vite": "4.2.2",
+    "astro": "6.0.6",
+    "tailwindcss": "4.2.2"
+  },
+  "devDependencies": {
+    "@astrojs/check": "^0.9.9",
+    "typescript": "^5.9.3"
+  },
+  "overrides": {
+    "vite": "8.1.4"
+  }
+}

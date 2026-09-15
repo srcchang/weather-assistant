@@ -1,0 +1,170 @@
+{
+  "nav": {
+    "features": "機能",
+    "sources": "データ提供元",
+    "faq": "よくある質問"
+  },
+  "hero": {
+    "badge": "台湾お天気アシスタント",
+    "title1": "明日の服装は？",
+    "title2": "寝る前にひと目で",
+    "subtitle": "明日の服装アドバイス、前日比較、毎晩21時のリマインダー。通勤者のための毎日のお供。",
+    "download": "ダウンロード",
+    "screenshotAlt": "お天気アシスタント服装アドバイスのスクリーンショット"
+  },
+  "trust": {
+    "languages": "対応言語",
+    "languagesCount": "5",
+    "areas": "対応郷鎮数",
+    "areasCount": "368",
+    "platforms": "両対応",
+    "platformsLabel": "iOS + Android"
+  },
+  "features": {
+    "sectionTitle": "お天気アシスタントの特徴",
+    "sectionSubtitle": "台湾の通勤者のために作られた日常ツール",
+    "items": [
+      {
+        "icon": "shirt",
+        "title": "明日の服装アドバイス",
+        "description": "明日の気温と今日の比較から、冷えたら上着・暑さ注意・寒暖差の重ね着など、堅実で役立つ5つのルールで提案します。"
+      },
+      {
+        "icon": "bell",
+        "title": "毎晩21時のローカル通知",
+        "description": "寝る前に1件だけ、明日の服装をお知らせ。完全ローカル・バックエンド不要で、機内モードでもキャッシュから通知し、タップで該当地点に戻ります。"
+      },
+      {
+        "icon": "thermometer",
+        "title": "予報をひと目で",
+        "description": "時間別気温・週間予報・湿度・風速風向・UV指数・暑さ指数WBGT・日の出日の入りを1ページに整理。"
+      },
+      {
+        "icon": "wind",
+        "title": "空気質＋地震ライト",
+        "description": "AQI・お天気ヘルパー原文に加え、有感地震時はホームバナーと地震リストで防災もサポート。"
+      },
+      {
+        "icon": "map-pin",
+        "title": "複数地点＋地図選択",
+        "description": "複数地点を保存してスワイプ切替。文字検索・地図タップで地点追加し、座標から郷鎮を自動判定します。"
+      },
+      {
+        "icon": "palette",
+        "title": "テーマ・文字サイズ・5言語",
+        "description": "ライト／ダークテーマ、文字サイズ調整、5言語対応。かわいくて質感のあるUIで毎日開きたくなります。"
+      }
+    ]
+  },
+  "sources": {
+    "sectionTitle": "データ提供元",
+    "sectionSubtitle": "公的オープンデータと信頼できるサービスを明示",
+    "items": [
+      {
+        "name": "中央気象署（CWA）",
+        "description": "3日・週間郷鎮予報、WBGT、日の出日の入り、お天気ヘルパー、AQIはCWAオープンデータを使用。"
+      },
+      {
+        "name": "OpenStreetMap",
+        "description": "地点検索オートコンプリートにOSM Nominatimを使用（台湾範囲のみ）。"
+      },
+      {
+        "name": "国土測絵センター（NLSC）",
+        "description": "座標から郷鎮の逆引きにNLSC地図を使用。範囲外は警告を表示します。"
+      },
+      {
+        "name": "Firebase（Google）",
+        "description": "匿名ログイン・利用分析・クラッシュ報告に使用し、個人追跡は行いません。"
+      }
+    ]
+  },
+  "faq": {
+    "sectionTitle": "よくある質問",
+    "items": [
+      {
+        "question": "アプリは無料ですか？",
+        "answer": "はい、完全無料です！服装アドバイス・予報・通知・地図など全機能が無料で、AdMob広告のみ表示されます。"
+      },
+      {
+        "question": "対応言語は？",
+        "answer": "繁体字中国語・簡体字中国語・英語・日本語・韓国語の5言語に対応し、設定で切替できます。"
+      },
+      {
+        "question": "ネット接続は必要ですか？",
+        "answer": "予報の更新には接続が必要です。通知は7日間のローカルキャッシュを使うため、短時間のオフラインでも届きます。"
+      },
+      {
+        "question": "夜の通知は止めたり時間変更できますか？",
+        "answer": "はい。設定で毎日の服装通知のオン／オフや時刻変更（既定21時）ができます。オフにすれば再スケジュールされません。"
+      },
+      {
+        "question": "位置情報の許可は必須ですか？",
+        "answer": "いいえ。手動で地点追加や地図選択ができます。位置情報は現在地を素早く見つけるためのショートカットです。"
+      },
+      {
+        "question": "予報データは正確ですか？",
+        "answer": "中央気象署オープンデータと公式ヘルパー原文を使用しています。履歴比較は観測所の coverage に依存するため、日常の服装の目安としてご利用ください。"
+      }
+    ]
+  },
+  "brand": {
+    "title": "お天気アシスタントについて",
+    "description": "毎朝の「何を着よう」の悩みをなくしたい。寝る前に服装アドバイスをひと目見れば、傘も上着も一言で解決。",
+    "cta": "今すぐダウンロード"
+  },
+  "footer": {
+    "tagline": "台湾お天気アシスタント\n明日の服装は寝る前にチェック",
+    "legal": "法的情報",
+    "contact": "お問い合わせ",
+    "privacy": "プライバシーポリシー",
+    "email": "srcchang@gmail.com",
+    "copyright": "© 2026 Project SRC. All rights reserved."
+  },
+  "common": {
+    "appStore": "App Store",
+    "googlePlay": "Google Play",
+    "downloadApp": "アプリをダウンロード",
+    "a11y": {
+      "home": "ホーム",
+      "menuOpen": "メニューを開く",
+      "languageSelect": "言語を選択",
+      "themeDark": "ダークモードに切替",
+      "themeLight": "ライトモードに切替",
+      "skipToContent": "メインコンテンツへ移動",
+      "appStoreLink": "App Storeでダウンロード（新しいタブで開く）",
+      "googlePlayLink": "Google Playでダウンロード（新しいタブで開く）"
+    }
+  },
+  "legal": {
+    "privacy": {
+      "title": "プライバシーポリシー",
+      "lastUpdated": "最終更新：2026年9月",
+      "sections": [
+        {
+          "heading": "収集する情報",
+          "content": "本アプリは天気予報・服装アドバイス・空気質・地震情報を提供します。個人を特定できる情報は収集せず、登録不要で全機能を利用できます。"
+        },
+        {
+          "heading": "位置情報",
+          "content": "位置情報は現在地の天気を素早く調べるためだけに使用し、サーバーへの送信・保存は行いません。許可しなくても手動で地点を追加して利用できます。"
+        },
+        {
+          "heading": "広告",
+          "content": "本アプリはGoogle AdMobで広告を表示します。AdMobは匿名IDや端末情報を広告のパーソナライズに利用する場合があります。"
+        },
+        {
+          "heading": "Firebaseサービス",
+          "content": "本アプリはFirebase（Google LLC）を使用します。Firebase Analyticsは匿名で利用データを収集し、Crashlyticsは安定性向上のためクラッシュ報告を収集します。匿名認証は端末の区別のみに使用します。"
+        },
+        {
+          "heading": "外部サービス",
+          "content": "本アプリは中央気象署オープンデータ、OpenStreetMap地点検索、国土測絵センター地図、Google Mapsを使用します。各サービスのプライバシーポリシーが適用されます。"
+        },
+        {
+          "heading": "お問い合わせ",
+          "content": "本ポリシーに関する質問は srcchang@gmail.com までご連絡ください。"
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,75 @@
+---
+import BaseLayout from '../components/BaseLayout.astro';
+import Nav from '../components/Nav.astro';
+import Hero from '../components/Hero.astro';
+import TrustIndicators from '../components/TrustIndicators.astro';
+import FeatureSection from '../components/FeatureSection.astro';
+import DataSources from '../components/DataSources.astro';
+import FAQ from '../components/FAQ.astro';
+import BrandCTA from '../components/BrandCTA.astro';
+import Footer from '../components/Footer.astro';
+import { getTranslations, t } from '../i18n/translations';
+import type { Locale } from '../i18n/config';
+
+interface Props {
+  locale: string;
+}
+
+const { locale } = Astro.props;
+const tr = getTranslations(locale as Locale);
+
+const featureItems: { icon: string; title: string; description: string }[] =
+  (tr as Record<string, any>).features?.items ?? [];
+
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'SoftwareApplication',
+  name: 'Weather Assistant',
+  operatingSystem: 'iOS, Android',
+  applicationCategory: 'WeatherApplication',
+  description: t(tr, 'hero.subtitle'),
+  offers: { '@type': 'Offer', price: '0', priceCurrency: 'USD' },
+  url: 'https://apps.apple.com/app/id6450742824',
+};
+---
+<BaseLayout
+  title={`${t(tr, 'hero.badge')} — Weather Assistant`}
+  description={t(tr, 'hero.subtitle')}
+  locale={locale}
+  currentPath="/"
+  jsonLd={jsonLd}
+>
+  <div data-embed-hide><Nav locale={locale} currentPath="/" /></div>
+  <main id="main" tabindex="-1">
+    <Hero locale={locale} />
+    <TrustIndicators locale={locale} />
+
+    <section id="features" class="border-t border-border-subtle bg-bg-surface px-4 py-16 sm:px-6 lg:px-8">
+      <div class="mx-auto max-w-4xl">
+        <div class="mb-12 text-center">
+          <h2 class="text-2xl font-bold text-text-primary sm:text-3xl">
+            {t(tr, 'features.sectionTitle')}
+          </h2>
+          <p class="mt-3 text-text-secondary">
+            {t(tr, 'features.sectionSubtitle')}
+          </p>
+        </div>
+        <div class="space-y-14">
+          {featureItems.map((item, i) => (
+            <FeatureSection
+              icon={item.icon}
+              title={item.title}
+              description={item.description}
+              reversed={i % 2 !== 0}
+            />
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <DataSources locale={locale} />
+    <FAQ locale={locale} />
+    <BrandCTA locale={locale} />
+  </main>
+  <div data-embed-hide><Footer locale={locale} currentPath="/" /></div>
+</BaseLayout>
